@@ -81,7 +81,7 @@
   /* Light mode — light surfaces, dark text */
   --background: var(--grey-100);
   --foreground: var(--grey-600);
-  --card: var(--grey-100);
+  --card: var(--grey-200);
   --card-foreground: var(--grey-600);
   --popover: var(--grey-100);
   --popover-foreground: var(--grey-600);
@@ -102,7 +102,7 @@
   --chart-3: #3d5a80;
   --chart-4: #e9c46a;
   --chart-5: #e76f51;
-  --sidebar: var(--grey-200);
+  --sidebar: var(--background);
   --sidebar-foreground: var(--grey-600);
   --sidebar-primary: var(--grey-500);
   --sidebar-primary-foreground: var(--grey-100);
@@ -137,7 +137,7 @@
   --chart-3: #e9c46a;
   --chart-4: #a78bfa;
   --chart-5: #f87171;
-  --sidebar: var(--grey-700);
+  --sidebar: var(--background);
   --sidebar-foreground: var(--grey-100);
   --sidebar-primary: var(--grey-200);
   --sidebar-primary-foreground: var(--grey-600);
@@ -154,4 +154,23 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Currency cards — keep overflow, show the scrollbar only on hover */
+.cards-scroll {
+  scrollbar-width: none;
+}
+
+.cards-scroll::-webkit-scrollbar {
+  height: 0;
+}
+
+.cards-scroll:hover,
+.cards-scroll:focus-within {
+  scrollbar-width: thin;
+}
+
+.cards-scroll:hover::-webkit-scrollbar,
+.cards-scroll:focus-within::-webkit-scrollbar {
+  height: 8px;
 }
